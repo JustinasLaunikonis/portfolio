@@ -19,7 +19,7 @@
         "Carcassonne": { image: "../assets/travel/carcassone.webp" },
         "Cologne": { image: "../assets/travel/cologne.webp" },
         "Barcelona": { image: "../assets/travel/barcelona.webp" },
-        "Edinburgh": { image: "../assets/travel/edinburgh1.JPG" },
+        "Edinburgh": { image: "../assets/travel/edinburgh1.webp" },
         "Tenerife": { image: "../assets/travel/tenerife.webp" },
         "Strasbourg": { image: "../assets/travel/strasbourg1.webp" },
         "Bali": { image: "../assets/travel/bali.webp" },
