@@ -585,7 +585,7 @@
         return merged;
       }
 
-      fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+      fetch("../assets/travel/vendor/countries-110m.json")
         .then((response) => response.json())
         .then((world) => {
           const ukraineGeometry = restoreCrimeaToUkraine(world);
