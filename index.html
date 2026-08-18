@@ -1034,7 +1034,7 @@
 <figure class="plugin-clip m-0 border border-black/30 dark:border-white/25" data-clip-player="musicalinstruments">
 <div class="plugin-media">
 <button aria-label="previous clip" class="plugin-nav plugin-nav-prev" data-clip-prev="" type="button">&lt;</button>
-<video class="plugin-video" controls="" data-clip-video="" height="1080" playsinline="" preload="metadata" src="assets/minecraft/fin-the-onion-thief.mp4" width="2036">
+<video poster="assets/posters/fin-the-onion-thief.jpg" class="plugin-video" controls="" data-clip-video="" height="1080" playsinline="" preload="none" src="assets/minecraft/fin-the-onion-thief.mp4" width="2036">
                 Your browser cannot play this clip.
                 <a href="assets/minecraft/fin-the-onion-thief.mp4">Download it instead.</a>
 </video>
@@ -1090,7 +1090,7 @@
 <figure class="plugin-clip m-0 border border-black/30 dark:border-white/25" data-clip-player="animalwhistle">
 <div class="plugin-media">
 <button aria-label="previous clip" class="plugin-nav plugin-nav-prev" data-clip-prev="" type="button">&lt;</button>
-<video class="plugin-video" controls="" data-clip-video="" height="988" playsinline="" preload="metadata" src="assets/animalwhistle/horse-whistles.mp4" width="1920">
+<video poster="assets/posters/horse-whistles.jpg" class="plugin-video" controls="" data-clip-video="" height="988" playsinline="" preload="none" src="assets/animalwhistle/horse-whistles.mp4" width="1920">
                 Your browser cannot play this clip.
                 <a href="assets/animalwhistle/horse-whistles.mp4">Download it instead.</a>
 </video>
@@ -1146,7 +1146,7 @@
 <figure class="plugin-clip m-0 border border-black/30 dark:border-white/25" data-clip-player="surgery">
 <div class="plugin-media">
 <button aria-label="previous clip" class="plugin-nav plugin-nav-prev" data-clip-prev="" type="button">&lt;</button>
-<video class="plugin-video" controls="" data-clip-video="" height="1080" playsinline="" preload="metadata" src="assets/surgery/surgery.mp4" width="1920">
+<video poster="assets/posters/surgery.jpg" class="plugin-video" controls="" data-clip-video="" height="1080" playsinline="" preload="none" src="assets/surgery/surgery.mp4" width="1920">
                 Your browser cannot play this clip.
                 <a href="assets/surgery/surgery.mp4">Download it instead.</a>
 </video>
@@ -1403,6 +1403,7 @@
         musicalinstruments: [
           {
             src: "assets/minecraft/fin-the-onion-thief.mp4",
+            poster: "assets/posters/fin-the-onion-thief.jpg",
             title: "Fin the Onion Thief",
             desc: '"Just some goofy thing I put together after writing a song in RP."',
             length: "1:24",
@@ -1432,6 +1433,7 @@
           },
           {
             src: "assets/minecraft/fly-me-to-the-tfmc.mp4",
+            poster: "assets/posters/fly-me-to-the-tfmc.jpg",
             title: "Fly Me to the Moon",
             desc: "A full song played with a Vielle.",
             length: "0:23",
@@ -1441,6 +1443,7 @@
           },
           {
             src: "assets/minecraft/c418-sweden.mp4",
+            poster: "assets/posters/c418-sweden.jpg",
             title: "C418 - Sweden",
             desc: "The one everybody knows, played with a Kalimba.",
             length: "1:51",
@@ -1450,6 +1453,7 @@
           },
           {
             src: "assets/minecraft/can-can.mp4",
+            poster: "assets/posters/can-can.jpg",
             title: "Can Can",
             desc: '"I have discovered greatness. Horseback Barding."',
             length: "0:22",
@@ -1461,6 +1465,7 @@
           // ratio, so 720x1080 of pixels renders as 9:16.
           {
             src: "assets/minecraft/clip-2.mp4",
+            poster: "assets/posters/clip-2.jpg",
             title: "Dude is a Legend",
             desc: '"Completely random encounter with @messenger27"',
             length: "0:33",
@@ -1470,6 +1475,7 @@
           },
           {
             src: "assets/minecraft/clip-3.mp4",
+            poster: "assets/posters/clip-3.jpg",
             title: "Harp Master",
             desc: "Short song played with a Harp.",
             length: "1:19",
@@ -1481,6 +1487,7 @@
         animalwhistle: [
           {
             src: "assets/animalwhistle/horse-whistles.mp4",
+            poster: "assets/posters/horse-whistles.jpg",
             title: "Horse Whistles",
             desc: "One right-click, and every horse in range lights up.",
             length: "0:17",
@@ -1491,6 +1498,7 @@
         surgery: [
           {
             src: "assets/surgery/surgery.mp4",
+            poster: "assets/posters/surgery.jpg",
             title: "Surgery",
             desc: "A full operation, start to finish.",
             length: "5:22",
@@ -1542,6 +1550,7 @@
           // metadata arrives. The frame itself is fixed by .plugin-media.
           video.width = clip.width;
           video.height = clip.height;
+          video.poster = clip.poster;
           video.src = clip.src;
           video.load();
 
