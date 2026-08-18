@@ -13,25 +13,25 @@
       const markerCardNext = document.getElementById("travel-marker-next");
       const ctx = canvas.getContext("2d");
       const markerDetails = {
-        "Singapore": { image: "../assets/travel/singapore.jpg" },
-        "Monaco": { image: "../assets/travel/monaco.jpg" },
-        "Rome": { image: "../assets/travel/rome.jpg" },
-        "Carcassonne": { image: "../assets/travel/carcassone.jpg" },
-        "Cologne": { image: "../assets/travel/cologne.jpg" },
-        "Barcelona": { image: "../assets/travel/barcelona.jpg" },
+        "Singapore": { image: "../assets/travel/singapore.webp" },
+        "Monaco": { image: "../assets/travel/monaco.webp" },
+        "Rome": { image: "../assets/travel/rome.webp" },
+        "Carcassonne": { image: "../assets/travel/carcassone.webp" },
+        "Cologne": { image: "../assets/travel/cologne.webp" },
+        "Barcelona": { image: "../assets/travel/barcelona.webp" },
         "Edinburgh": { image: "../assets/travel/edinburgh1.JPG" },
-        "Tenerife": { image: "../assets/travel/tenerife.jpg" },
-        "Strasbourg": { image: "../assets/travel/strasbourg1.jpg" },
-        "Bali": { image: "../assets/travel/bali.jpg" },
-        "Kuala Lumpur": { image: "../assets/travel/kuala_lumpur.jpg" },
-        "Salt Lake City": { image: "../assets/travel/salt_lake_city.jpg" },
-        "Aspen": { image: "../assets/travel/aspen.jpg" },
-        "Yosemite Valley": { image: "../assets/travel/yosemite.jpg" },
-        "Zanzibar": { image: "../assets/travel/zanzibar.jpg" },
+        "Tenerife": { image: "../assets/travel/tenerife.webp" },
+        "Strasbourg": { image: "../assets/travel/strasbourg1.webp" },
+        "Bali": { image: "../assets/travel/bali.webp" },
+        "Kuala Lumpur": { image: "../assets/travel/kuala_lumpur.webp" },
+        "Salt Lake City": { image: "../assets/travel/salt_lake_city.webp" },
+        "Aspen": { image: "../assets/travel/aspen.webp" },
+        "Yosemite Valley": { image: "../assets/travel/yosemite.webp" },
+        "Zanzibar": { image: "../assets/travel/zanzibar.webp" },
         "Lithuania": {
           images: [
-            "../assets/travel/somewhere_in_lithuania.jpg",
-            "../assets/travel/northern_lithuania.jpg"
+            "../assets/travel/somewhere_in_lithuania.webp",
+            "../assets/travel/northern_lithuania.webp"
           ],
           caption: "born and raised. this one isn't a trip, it's home."
         }
