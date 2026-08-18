@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+  }
+
+  body {
+    background: #f6f4ee;
+    color: #101114;
+    font-family: "IBM Plex Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* faint grid, echoes the fieldset-heavy layout of the site */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.045) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .panel {
+    position: relative;
+    width: 1040px;
+    height: 470px;
+    background: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.5);
+    padding: 58px 62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* legend chip riding the top border, same trick as the site's fieldsets */
+  .legend {
+    position: absolute;
+    top: -17px;
+    left: 46px;
+    background: #ffffff;
+    padding: 0 14px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 21px;
+    font-style: italic;
+    color: rgba(16, 17, 20, 0.68);
+  }
+
+  h1 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 62px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-size: 29px;
+    line-height: 1.45;
+    color: rgba(16, 17, 20, 0.68);
+    max-width: 810px;
+    margin-top: 22px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 12px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+  }
+
+  .tag {
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+    padding: 7px 17px;
+    background: #f1efe7;
+  }
+
+  .foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .url {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="panel">
+  <div class="legend">whoami</div>
+  <div>
+    <h1>Justinas (Justin)<br/>Launikonis</h1>
+    <p class="tagline">IT student at NHL Stenden and Minecraft plugin dev.</p>
+  </div>
+  <div class="foot">
+    <div class="tags">
+      <span class="tag">lore</span>
+      <span class="tag">music</span>
+      <span class="tag">toolbox</span>
+      <span class="tag">travel</span>
+      <span class="tag">wins</span>
+    </div>
+    <div class="url">justinaslaunikonis.me</div>
+  </div>
+</div>
+</body>
+</html>
