@@ -386,8 +386,11 @@
         ctx.textAlign = "center";
         ctx.fillText(status, canvas.width / 2, canvas.height / 2 - 18);
         ctx.font = "14px IBM Plex Mono";
+        const coarse = window.matchMedia("(hover: none), (pointer: coarse)").matches;
         ctx.fillText(
-          status === "paused" ? "press P to resume" : "press R to run it back",
+          status === "paused"
+            ? (coarse ? "tap to resume" : "press P to resume")
+            : (coarse ? "tap to run it back" : "press R to run it back"),
           canvas.width / 2,
           canvas.height / 2 + 16
         );
@@ -555,6 +558,19 @@
           btn.addEventListener("contextmenu", (event) => event.preventDefault());
         });
       }
+
+      // Game over and pause are keyboard-only otherwise, which strands anyone
+      // on a touch device once they top out.
+      canvas.addEventListener("pointerdown", (event) => {
+        if (status === "game over") {
+          event.preventDefault();
+          reset();
+        } else if (status === "paused") {
+          event.preventDefault();
+          status = "playing";
+          statusEl.textContent = status;
+        }
+      });
 
       reset();
       requestAnimationFrame(tick);
