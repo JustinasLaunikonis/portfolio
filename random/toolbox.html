@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="../favicon.svg" rel="icon"/>
+<title>Justinas Launikonis</title>
+<script>
+    (() => {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="../index.css" rel="stylesheet"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+<link href="../assets/toolbox/toolbox.css" rel="stylesheet"/>
+
+
+<meta content="Andy Vu's stack turned into a tiny tetris-style toolbox game" name="description"/></head>
+<body>
+<main class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 leading-5 font-sans">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
+<a href="../index.html">
+<h1 class="font-mono text-2xl font-bold">Justinas (Justin) Launikonis</h1>
+</a>
+<div class="grid grid-cols-2 sm:flex gap-2 items-stretch sm:items-center w-full sm:w-auto my-1">
+<a class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-full sm:w-32 h-9 sm:h-6 me-0 bg-[#0077b5] text-white" href="https://www.linkedin.com/in/justinas-launikonis-07762641b/" rel="noopener noreferrer" target="_blank">
+<div class="icon" style="mask-image: url('../assets/linkedin.svg'); -webkit-mask-image: url('../assets/linkedin.svg');"></div>
+<span class="ms-1">LinkedIn</span>
+</a>
+<a class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-full sm:w-32 h-9 sm:h-6 me-0" href="https://github.com/justinasla" rel="noopener noreferrer" target="_blank">
+<div class="icon" style="mask-image: url('../assets/github.svg'); -webkit-mask-image: url('../assets/github.svg');"></div>
+<span class="ms-1">GitHub</span>
+</a>
+<button aria-label="Toggle dark mode" class="theme-toggle col-span-2 justify-self-end sm:justify-self-auto" id="theme-toggle" title="Toggle dark mode" type="button">
+<span class="theme-toggle-glyph" id="theme-toggle-icon"></span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<fieldset class="border-t md:border border-solid border-black dark:border-white min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h6 class="text-lg mx-2 font-mono italic">cat ~/random/toolbox.md</h6>
+</legend>
+<div class="toolbox-shell">
+<section class="toolbox-hero">
+<h2>toolbox</h2>
+<p>
+            same idea as a stack page, except slightly less boring. the pieces are
+            things i actually use, grouped by what they are. arrow keys move, up
+            rotates, space drops.
+          </p>
+</section>
+<div class="toolbox-grid">
+<section class="toolbox-stage">
+<div class="toolbox-canvas-wrap">
+<canvas class="toolbox-canvas" height="640" id="toolbox-canvas" width="320"></canvas>
+</div>
+</section>
+<aside class="toolbox-panel">
+<section class="toolbox-card">
+<h3>run stats</h3>
+<div class="toolbox-stats">
+<div class="toolbox-stat">
+<p class="toolbox-stat-label">lines</p>
+<p class="toolbox-stat-value" id="toolbox-lines">0</p>
+</div>
+<div class="toolbox-stat">
+<p class="toolbox-stat-label">score</p>
+<p class="toolbox-stat-value" id="toolbox-score">0</p>
+</div>
+<div class="toolbox-stat">
+<p class="toolbox-stat-label">level</p>
+<p class="toolbox-stat-value" id="toolbox-level">1</p>
+</div>
+<div class="toolbox-stat">
+<p class="toolbox-stat-label">status</p>
+<p class="toolbox-stat-value" id="toolbox-status">playing</p>
+</div>
+</div>
+</section>
+<section class="toolbox-card">
+<h3>incoming</h3>
+<p>the next stack item in the queue.</p>
+<div class="toolbox-next-chip">
+<span class="toolbox-next-swatch" id="toolbox-next-swatch"></span>
+<span id="toolbox-next-name">Python</span>
+</div>
+</section>
+<section class="toolbox-card">
+<h3>legend</h3>
+<div class="toolbox-legend">
+<div class="toolbox-legend-row">
+<span class="toolbox-legend-swatch" style="background:#9b5cff;"></span>
+<div class="toolbox-legend-copy">
+<strong>languages / markup</strong>
+<span>python, c++, typescript, javascript, lua, sql, html, css</span>
+</div>
+</div>
+<div class="toolbox-legend-row">
+<span class="toolbox-legend-swatch" style="background:#3db8ff;"></span>
+<div class="toolbox-legend-copy">
+<strong>frameworks / libraries</strong>
+<span>django, flask, celery, next.js, tailwind</span>
+</div>
+</div>
+<div class="toolbox-legend-row">
+<span class="toolbox-legend-swatch" style="background:#39d98a;"></span>
+<div class="toolbox-legend-copy">
+<strong>infra / platform</strong>
+<span>docker, linux, openai, azure, node, tailscale</span>
+</div>
+</div>
+<div class="toolbox-legend-row">
+<span class="toolbox-legend-swatch" style="background:#ff5d73;"></span>
+<div class="toolbox-legend-copy">
+<strong>tools / workflow</strong>
+<span>git, vim, vs code, cursor, figma, blender, davinci resolve, maven, vite, latex</span>
+</div>
+</div>
+</div>
+</section>
+<section class="toolbox-card">
+<h3>controls</h3>
+<ul>
+<li>left / right: move</li>
+<li>down: soft drop</li>
+<li>up: rotate</li>
+<li>space: hard drop</li>
+<li>p: pause</li>
+<li>r: restart</li>
+</ul>
+</section>
+</aside>
+</div>
+</div>
+</fieldset>
+</div>
+<div aria-label="tetris controls" class="toolbox-touchpad" id="toolbox-touchpad">
+<button aria-label="move left" class="toolbox-touch-btn" data-action="left" type="button">
+<span class="arrow">◀</span>
+</button>
+<button aria-label="rotate" class="toolbox-touch-btn" data-action="rotate" type="button">
+<span class="arrow">↻</span>
+</button>
+<button aria-label="soft drop" class="toolbox-touch-btn" data-action="down" type="button">
+<span class="arrow">▼</span>
+</button>
+<button aria-label="move right" class="toolbox-touch-btn" data-action="right" type="button">
+<span class="arrow">▶</span>
+</button>
+<button aria-label="hard drop" class="toolbox-touch-btn" data-action="drop" type="button">
+      drop
+    </button>
+</div>
+<div aria-label="tetris controls" class="toolbox-touchpad" id="toolbox-touchpad">
+<button aria-label="move left" class="toolbox-touch-btn" data-action="left" type="button">
+<span class="arrow">◀</span>
+</button>
+<button aria-label="rotate" class="toolbox-touch-btn" data-action="rotate" type="button">
+<span class="arrow">↻</span>
+</button>
+<button aria-label="soft drop" class="toolbox-touch-btn" data-action="down" type="button">
+<span class="arrow">▼</span>
+</button>
+<button aria-label="move right" class="toolbox-touch-btn" data-action="right" type="button">
+<span class="arrow">▶</span>
+</button>
+<button aria-label="hard drop" class="toolbox-touch-btn" data-action="drop" type="button">
+      drop
+    </button>
+</div>
+<div class="h-3"></div>
+<fieldset class="border-t md:border border-solid border-black dark:border-white min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+</legend>
+<div class="flex flex-row justify-between">
+<span class="prose dark:prose-invert">
+          Source code on
+          <a href="https://github.com/sagarreddypatil/portfolio-website">
+            GitHub
+          </a>
+          thanks to
+          <a href="https://sagarpatil.me/">
+            Sagar Patil
+          </a>
+</span>
+</div>
+</fieldset>
+</main>
+<script src="../assets/toolbox/toolbox.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

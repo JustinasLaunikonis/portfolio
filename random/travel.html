@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="../favicon.svg" rel="icon"/>
+<title>Justinas Launikonis</title>
+<script>
+    (() => {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="../index.css" rel="stylesheet"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+<link href="../assets/travel/travel.css" rel="stylesheet"/>
+
+
+<meta content="Andy Vu's travel map and bucket list" name="description"/></head>
+<body>
+<main class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 leading-5 font-sans">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
+<a href="../index.html">
+<h1 class="font-mono text-2xl font-bold">Justinas (Justin) Launikonis</h1>
+</a>
+<div class="grid grid-cols-2 sm:flex gap-2 items-stretch sm:items-center w-full sm:w-auto my-1">
+<a class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-full sm:w-32 h-9 sm:h-6 me-0 bg-[#0077b5] text-white" href="https://www.linkedin.com/in/justinas-launikonis-07762641b/" rel="noopener noreferrer" target="_blank">
+<div class="icon" style="mask-image: url('../assets/linkedin.svg'); -webkit-mask-image: url('../assets/linkedin.svg');"></div>
+<span class="ms-1">LinkedIn</span>
+</a>
+<a class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-full sm:w-32 h-9 sm:h-6 me-0" href="https://github.com/justinasla" rel="noopener noreferrer" target="_blank">
+<div class="icon" style="mask-image: url('../assets/github.svg'); -webkit-mask-image: url('../assets/github.svg');"></div>
+<span class="ms-1">GitHub</span>
+</a>
+<button aria-label="Toggle dark mode" class="theme-toggle col-span-2 justify-self-end sm:justify-self-auto" id="theme-toggle" title="Toggle dark mode" type="button">
+<span class="theme-toggle-glyph" id="theme-toggle-icon"></span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<fieldset class="border-t md:border border-solid border-black dark:border-white min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h6 class="text-lg mx-2 font-mono italic">cat ~/random/travel.md</h6>
+</legend>
+<div class="travel-shell">
+<div class="travel-stage-wrap">
+<div class="travel-stage" id="travel-globe-wrap">
+<canvas class="globe-canvas" height="420" id="travel-globe" width="420"></canvas>
+<div class="travel-tooltip" id="travel-tooltip"></div>
+<div class="travel-hud">
+<div>travel.exe</div>
+<div>drag to rotate</div>
+<div>wheel or pinch to zoom</div>
+</div>
+<div class="travel-legend">
+<div class="travel-legend-row">
+<span class="legend-check">v</span>
+<span>been there</span>
+</div>
+<div class="travel-legend-row">
+<span class="legend-pin"></span>
+<span>bucket list</span>
+</div>
+</div>
+</div>
+<div aria-live="polite" class="travel-marker-card" id="travel-marker-card">
+<div class="travel-marker-card-head">
+<div>
+<p class="travel-marker-card-label" id="travel-marker-kind">been there</p>
+<p class="travel-marker-card-title" id="travel-marker-title">New York City</p>
+</div>
+<button class="travel-marker-card-close" id="travel-marker-close" type="button">x</button>
+</div>
+<div class="travel-marker-media" id="travel-marker-media">
+<button aria-label="previous photo" class="travel-marker-nav" id="travel-marker-prev" type="button">&lt;</button>
+<img alt="New York City" decoding="async" id="travel-marker-image" loading="lazy" src="../assets/travel/place1.svg"/>
+<button aria-label="next photo" class="travel-marker-nav" id="travel-marker-next" type="button">&gt;</button>
+</div>
+<div class="travel-marker-card-copy">
+<p id="travel-marker-caption">a short placeholder note about this place.</p>
+</div>
+</div>
+</div>
+<div class="travel-marquee">
+<div class="travel-track">
+<div class="travel-card">
+<img alt="Avignon" decoding="async" loading="lazy" src="../assets/travel/avignon.jpg"/>
+<p>Avignon, France</p>
+</div>
+<div class="travel-card">
+<img alt="Bali" decoding="async" loading="lazy" src="../assets/travel/bali.jpg"/>
+<p>Bali, Indonesia</p>
+</div>
+<div class="travel-card">
+<img alt="Barcelona" decoding="async" loading="lazy" src="../assets/travel/barcelona.jpg"/>
+<p>Barcelona, Spain</p>
+</div>
+<div class="travel-card">
+<img alt="Bryce Canyon" decoding="async" loading="lazy" src="../assets/travel/bryce_canyon.jpg"/>
+<p>Bryce Canyon, Utah</p>
+</div>
+<div class="travel-card">
+<img alt="Carcassonne" decoding="async" loading="lazy" src="../assets/travel/carcassone.jpg"/>
+<p>Carcassonne, France</p>
+</div>
+<div class="travel-card">
+<img alt="Colmar" decoding="async" loading="lazy" src="../assets/travel/colmar.jpg"/>
+<p>Colmar, France</p>
+</div>
+<div class="travel-card">
+<img alt="Cologne" decoding="async" loading="lazy" src="../assets/travel/cologne.jpg" style="object-position: bottom;"/>
+<p>Cologne, Germany</p>
+</div>
+<div class="travel-card">
+<img alt="Edinburgh" decoding="async" loading="lazy" src="../assets/travel/edinburgh1.JPG"/>
+<p>Edinburgh, Scotland</p>
+</div>
+<div class="travel-card">
+<img alt="Edinburgh" decoding="async" loading="lazy" src="../assets/travel/edinburgh2.JPG"/>
+<p>Edinburgh, Scotland</p>
+</div>
+<div class="travel-card">
+<img alt="Genoa" decoding="async" loading="lazy" src="../assets/travel/genoa.jpg"/>
+<p>Genoa, Italy</p>
+</div>
+<div class="travel-card">
+<img alt="Groningen" decoding="async" loading="lazy" src="../assets/travel/groningen.jpg"/>
+<p>Groningen, Netherlands</p>
+</div>
+<div class="travel-card">
+<img alt="Kuala Lumpur" decoding="async" loading="lazy" src="../assets/travel/kuala_lumpur.jpg"/>
+<p>Kuala Lumpur, Malaysia</p>
+</div>
+<div class="travel-card">
+<img alt="Monaco" decoding="async" loading="lazy" src="../assets/travel/monaco.jpg"/>
+<p>Monaco</p>
+</div>
+<div class="travel-card">
+<img alt="Monument Valley" decoding="async" loading="lazy" src="../assets/travel/monument_valley.jpg"/>
+<p>Monument Valley, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Monza" decoding="async" loading="lazy" src="../assets/travel/monza.jpg"/>
+<p>Monza, Italy</p>
+</div>
+<div class="travel-card">
+<img alt="Northern Lithuania" decoding="async" loading="lazy" src="../assets/travel/northern_lithuania.jpg"/>
+<p>Northern Lithuania</p>
+</div>
+<div class="travel-card">
+<img alt="Rome" decoding="async" loading="lazy" src="../assets/travel/rome.jpg"/>
+<p>Rome, Italy</p>
+</div>
+<div class="travel-card">
+<img alt="Singapore" decoding="async" loading="lazy" src="../assets/travel/singapore.jpg"/>
+<p>Singapore</p>
+</div>
+<div class="travel-card">
+<img alt="Strasbourg" decoding="async" loading="lazy" src="../assets/travel/strasbourg1.jpg"/>
+<p>Strasbourg, France</p>
+</div>
+<div class="travel-card">
+<img alt="Tenerife" decoding="async" loading="lazy" src="../assets/travel/tenerife.jpg"/>
+<p>Tenerife, Spain</p>
+</div>
+<div class="travel-card">
+<img alt="Yosemite" decoding="async" loading="lazy" src="../assets/travel/yosemite.jpg"/>
+<p>Yosemite National Park</p>
+</div>
+<div class="travel-card">
+<img alt="Aspen" decoding="async" loading="lazy" src="../assets/travel/aspen.jpg"/>
+<p>Aspen, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Grand Teton" decoding="async" loading="lazy" src="../assets/travel/grand_teton.jpg"/>
+<p>Grand Teton National Park</p>
+</div>
+<div class="travel-card">
+<img alt="Mount Rushmore" decoding="async" loading="lazy" src="../assets/travel/mount_rushmore.jpg"/>
+<p>Mount Rushmore, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Salt Lake City" decoding="async" loading="lazy" src="../assets/travel/salt_lake_city.jpg"/>
+<p>Salt Lake City, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Lithuania" decoding="async" loading="lazy" src="../assets/travel/somewhere_in_lithuania.jpg"/>
+<p>Somewhere in Lithuania</p>
+</div>
+<div class="travel-card">
+<img alt="Yellowstone" decoding="async" loading="lazy" src="../assets/travel/yellowstone.jpg"/>
+<p>Yellowstone National Park</p>
+</div>
+<div class="travel-card">
+<img alt="Zanzibar" decoding="async" loading="lazy" src="../assets/travel/zanzibar.jpg"/>
+<p>Zanzibar, Tanzania</p>
+</div>
+<div class="travel-card">
+<img alt="Avignon" decoding="async" loading="lazy" src="../assets/travel/avignon.jpg"/>
+<p>Avignon, France</p>
+</div>
+<div class="travel-card">
+<img alt="Bali" decoding="async" loading="lazy" src="../assets/travel/bali.jpg"/>
+<p>Bali, Indonesia</p>
+</div>
+<div class="travel-card">
+<img alt="Barcelona" decoding="async" loading="lazy" src="../assets/travel/barcelona.jpg"/>
+<p>Barcelona, Spain</p>
+</div>
+<div class="travel-card">
+<img alt="Bryce Canyon" decoding="async" loading="lazy" src="../assets/travel/bryce_canyon.jpg"/>
+<p>Bryce Canyon, Utah</p>
+</div>
+<div class="travel-card">
+<img alt="Carcassonne" decoding="async" loading="lazy" src="../assets/travel/carcassone.jpg"/>
+<p>Carcassonne, France</p>
+</div>
+<div class="travel-card">
+<img alt="Colmar" decoding="async" loading="lazy" src="../assets/travel/colmar.jpg"/>
+<p>Colmar, France</p>
+</div>
+<div class="travel-card">
+<img alt="Cologne" decoding="async" loading="lazy" src="../assets/travel/cologne.jpg" style="object-position: bottom;"/>
+<p>Cologne, Germany</p>
+</div>
+<div class="travel-card">
+<img alt="Edinburgh" decoding="async" loading="lazy" src="../assets/travel/edinburgh1.JPG"/>
+<p>Edinburgh, Scotland</p>
+</div>
+<div class="travel-card">
+<img alt="Edinburgh" decoding="async" loading="lazy" src="../assets/travel/edinburgh2.JPG"/>
+<p>Edinburgh, Scotland</p>
+</div>
+<div class="travel-card">
+<img alt="Genoa" decoding="async" loading="lazy" src="../assets/travel/genoa.jpg"/>
+<p>Genoa, Italy</p>
+</div>
+<div class="travel-card">
+<img alt="Groningen" decoding="async" loading="lazy" src="../assets/travel/groningen.jpg"/>
+<p>Groningen, Netherlands</p>
+</div>
+<div class="travel-card">
+<img alt="Kuala Lumpur" decoding="async" loading="lazy" src="../assets/travel/kuala_lumpur.jpg"/>
+<p>Kuala Lumpur, Malaysia</p>
+</div>
+<div class="travel-card">
+<img alt="Monaco" decoding="async" loading="lazy" src="../assets/travel/monaco.jpg"/>
+<p>Monaco</p>
+</div>
+<div class="travel-card">
+<img alt="Monument Valley" decoding="async" loading="lazy" src="../assets/travel/monument_valley.jpg"/>
+<p>Monument Valley, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Monza" decoding="async" loading="lazy" src="../assets/travel/monza.jpg"/>
+<p>Monza, Italy</p>
+</div>
+<div class="travel-card">
+<img alt="Northern Lithuania" decoding="async" loading="lazy" src="../assets/travel/northern_lithuania.jpg"/>
+<p>Northern Lithuania</p>
+</div>
+<div class="travel-card">
+<img alt="Rome" decoding="async" loading="lazy" src="../assets/travel/rome.jpg"/>
+<p>Rome, Italy</p>
+</div>
+<div class="travel-card">
+<img alt="Singapore" decoding="async" loading="lazy" src="../assets/travel/singapore.jpg"/>
+<p>Singapore</p>
+</div>
+<div class="travel-card">
+<img alt="Strasbourg" decoding="async" loading="lazy" src="../assets/travel/strasbourg1.jpg"/>
+<p>Strasbourg, France</p>
+</div>
+<div class="travel-card">
+<img alt="Tenerife" decoding="async" loading="lazy" src="../assets/travel/tenerife.jpg"/>
+<p>Tenerife, Spain</p>
+</div>
+<div class="travel-card">
+<img alt="Yosemite" decoding="async" loading="lazy" src="../assets/travel/yosemite.jpg"/>
+<p>Yosemite National Park</p>
+</div>
+<div class="travel-card">
+<img alt="Aspen" decoding="async" loading="lazy" src="../assets/travel/aspen.jpg"/>
+<p>Aspen, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Grand Teton" decoding="async" loading="lazy" src="../assets/travel/grand_teton.jpg"/>
+<p>Grand Teton National Park</p>
+</div>
+<div class="travel-card">
+<img alt="Mount Rushmore" decoding="async" loading="lazy" src="../assets/travel/mount_rushmore.jpg"/>
+<p>Mount Rushmore, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Salt Lake City" decoding="async" loading="lazy" src="../assets/travel/salt_lake_city.jpg"/>
+<p>Salt Lake City, USA</p>
+</div>
+<div class="travel-card">
+<img alt="Lithuania" decoding="async" loading="lazy" src="../assets/travel/somewhere_in_lithuania.jpg"/>
+<p>Somewhere in Lithuania</p>
+</div>
+<div class="travel-card">
+<img alt="Yellowstone" decoding="async" loading="lazy" src="../assets/travel/yellowstone.jpg"/>
+<p>Yellowstone National Park</p>
+</div>
+<div class="travel-card">
+<img alt="Zanzibar" decoding="async" loading="lazy" src="../assets/travel/zanzibar.jpg"/>
+<p>Zanzibar, Tanzania</p>
+</div>
+</div></div>
+</div>
+</fieldset>
+</div>
+<div class="h-3"></div>
+<fieldset class="border-t md:border border-solid border-black dark:border-white min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+</legend>
+<div class="flex flex-row justify-between">
+<span class="prose dark:prose-invert">
+          Source code on
+          <a href="https://github.com/sagarreddypatil/portfolio-website">
+            GitHub
+          </a>
+          thanks to
+          <a href="https://sagarpatil.me/">
+            Sagar Patil
+          </a>
+</span>
+</div>
+</fieldset>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="../assets/travel/travel.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

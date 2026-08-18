@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="../favicon.svg" rel="icon"/>
+<title>Justinas Launikonis</title>
+<script>
+    (() => {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="../index.css" rel="stylesheet"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+<link href="../assets/lore/lore.css" rel="stylesheet"/>
+
+
+<meta content="Andy Vu's story notes, side quests, and builder lore" name="description"/></head>
+<body>
+<main class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 leading-5 font-sans">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
+<a href="../index.html">
+<h1 class="font-mono text-2xl font-bold">Justinas (Justin) Launikonis</h1>
+</a>
+<div class="grid grid-cols-2 sm:flex gap-2 items-stretch sm:items-center w-full sm:w-auto my-1">
+<a class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-full sm:w-32 h-9 sm:h-6 me-0 bg-[#0077b5] text-white" href="https://www.linkedin.com/in/justinas-launikonis-07762641b/" rel="noopener noreferrer" target="_blank">
+<div class="icon" style="mask-image: url('../assets/linkedin.svg'); -webkit-mask-image: url('../assets/linkedin.svg');"></div>
+<span class="ms-1">LinkedIn</span>
+</a>
+<a class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-full sm:w-32 h-9 sm:h-6 me-0" href="https://github.com/justinasla" rel="noopener noreferrer" target="_blank">
+<div class="icon" style="mask-image: url('../assets/github.svg'); -webkit-mask-image: url('../assets/github.svg');"></div>
+<span class="ms-1">GitHub</span>
+</a>
+<button aria-label="Toggle dark mode" class="theme-toggle col-span-2 justify-self-end sm:justify-self-auto" id="theme-toggle" title="Toggle dark mode" type="button">
+<span class="theme-toggle-glyph" id="theme-toggle-icon"></span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<fieldset class="border-t md:border border-solid border-black dark:border-white min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h6 class="text-lg mx-2 font-mono italic">cat ~/random/lore.md</h6>
+</legend>
+<div class="lore-shell">
+<section class="lore-hero">
+<h2>lore</h2>
+<p>(my life's faqs)</p>
+</section>
+<section class="lore-section">
+<p class="lore-section-label">life</p>
+<div class="lore-list">
+<details class="lore-entry" id="faq-about" open="">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">so tell me about yourself</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+  hey! i'm justin. it student at nhl stenden, minecraft plugin dev with 6000+ unique users, and i like building things that people actually use. currently startup maxing with insyra and launching 5th minecraft server season.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-why">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">why this field?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+  for my 1st birthday my parents ran the old game where they lay out a bunch of objects and whatever the baby crawls to is supposed to be its future profession. i picked the floppy disc.
+                </p>
+<div class="lore-photos">
+<figure>
+<img alt="Baby crawling toward a row of objects laid out on the floor" decoding="async" loading="lazy" src="../assets/gallery/birthday1.jpg"/>
+<figcaption>the lineup</figcaption>
+</figure>
+<figure>
+<img alt="Baby sitting next to the floppy disc while family watches from the side" decoding="async" loading="lazy" src="../assets/gallery/birthday3.jpg"/>
+<figcaption>deliberating</figcaption>
+</figure>
+<figure>
+<img alt="Baby on the floor in the middle of the objects, deciding" decoding="async" loading="lazy" src="../assets/gallery/birthday2.jpg"/>
+<figcaption>verbatim floppy in hand</figcaption>
+</figure>
+</div>
+<p>
+  other than that, i was just curious how essentially anything is possible with a computer. planning, researching any topic, building things, fixing things, automating stuff. essentially limitless opportunities.
+                </p>
+<p>
+  knowledge compounded and eventually i became the "go-to tech guy" in the family. if it has a screen or a cable, i get the call (i'm batman).
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-weakness">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what's your biggest weakness?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  women.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-fun">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what do you do for fun?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+  playing video games with friends, biking, rock climbing, meeting new people. i like being around people.
+                </p>
+</div>
+</details>
+</div>
+</section>
+<section class="lore-section">
+<p class="lore-section-label">minecraft</p>
+<div class="lore-list">
+<details class="lore-entry" id="faq-mc-what">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">wait you make minecraft plugins?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  yep. paper plugins in java, 6000+ unique users across them. that's honestly how i
+                  learned to code and run a business.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-mc-start">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">how'd you get into that?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  started as a player on a server with strangers during covid. nobody really cared
+                  enough to keep it running properly, and there were barely any technical people in
+                  the community so i taught myself. first basic plugins with help from more
+                  experienced devs, then hosting our own server on linux at hetzner, and years later
+                  incorporating it.
+                </p>
+<p>
+                  each time someone asked for something new i just figured it out: yaml configs so
+                  non-devs (lore writers) could edit things, then apis, then whole seasons built around the plugins (cough...planes...).
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-mc-still">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">do you still do that?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  yes! launching season 5 in september '26. it's less constant than it used to be since the team
+                  can be self-sufficient upon request, but i'm nowhere near done with it.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-mc-fails">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">how many "failed" minecraft plugins have you made?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  guess!
+                </p>
+<div class="guess-game" id="guess-game">
+<div class="guess-input-row">
+<input id="guess-input" max="100" min="1" placeholder="enter a number" type="number"/>
+<button id="guess-submit" type="button">submit</button>
+<button id="guess-giveup" type="button">give up</button>
+</div>
+<p class="guess-result" id="guess-result"></p>
+</div>
+<p class="text-sm opacity-60 mt-3">
+                  (a "failed" plugin = something that ate 50+ hours and never shipped)
+                </p>
+</div>
+</details>
+</div>
+</section>
+<section class="lore-section">
+<p class="lore-section-label">building</p>
+<div class="lore-list">
+<details class="lore-entry" id="faq-now">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what are you working on right now?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  hackathons, plugin upkeep, and architecting preventative measures for the minecraft
+                  server in the age of ai &mdash; the "cool kids" don't find dupe glitches themselves
+                  anymore, they social engineer claude into handing them one. patching that class of
+                  exploit is a whole job now.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-learning">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">how do you learn new stuff?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+  i just start building and figure it out as i go. if i get stuck i'll read docs or ask claude but i learn best by doing.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-stack">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what's your tech stack?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  i'm flexible so whatever the rest of the team is using. but my go-to when i'm solo is just js/html, python or java.
+                </p>
+</div>
+</details>
+</div>
+</section>
+<section class="lore-section">
+<p class="lore-section-label">random</p>
+<div class="lore-list">
+<details class="lore-entry" id="faq-typing-speed">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what's your typing speed?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  around 105 wpm. but can you beat me?
+                </p>
+<div class="typing-game" id="typing-game">
+<div class="typing-display" id="typing-display"></div>
+<input autocapitalize="off" autocomplete="off" autocorrect="off" class="typing-input" id="typing-input" placeholder="click here and start typing..." spellcheck="false" type="text"/>
+<div class="typing-stats">
+<span id="typing-wpm">0 wpm</span>
+<span id="typing-time">0.0s</span>
+<button id="typing-refresh" title="new words" type="button">refresh</button>
+</div>
+<p class="typing-result" id="typing-result"></p>
+</div>
+</div>
+</details>
+<details class="lore-entry" id="faq-food">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what's your favorite food?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+                  chicken burger. buttermilk brined, decent crust, brioche toasted
+                  in butter, hot honey sauce poured over the top so it seeps into every crag, no lettuce.
+                </p>
+</div>
+</details>
+<details class="lore-entry" id="faq-command">
+<summary>
+<div class="lore-meta">
+<span class="lore-title">what's your favorite terminal command?</span>
+</div>
+<span class="lore-summary-right">
+<span class="lore-toggle">+</span>
+</span>
+</summary>
+<div class="lore-body">
+<p>
+  claude --dangerously-skip-permissions.
+                </p>
+</div>
+</details>
+</div>
+</section>
+</div>
+</fieldset>
+</div>
+<div class="h-3"></div>
+<fieldset class="border-t md:border border-solid border-black dark:border-white min-w-0 p-1 md:p-4 pt-2">
+<legend class="ms-4 md:ms-0">
+<h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+</legend>
+<div class="flex flex-row justify-between">
+<span class="prose dark:prose-invert">
+          Source code on
+          <a href="https://github.com/sagarreddypatil/portfolio-website">
+            GitHub
+          </a>
+          thanks to
+          <a href="https://sagarpatil.me/">
+            Sagar Patil
+          </a>
+</span>
+</div>
+</fieldset>
+</main>
+<script src="../assets/lore/lore.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
