@@ -23,6 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Minify CSS, JS and HTML
+        run: |
+          npx -y esbuild index.css assets/site.css assets/site.js assets/lore/lore.css assets/lore/lore.js assets/music/music.css assets/music/music.js --minify --allow-overwrite --outbase=. --outdir=. --log-level=warning
+          npx -y html-minifier-terser --collapse-whitespace --conservative-collapse --remove-comments --minify-css true --minify-js true --file-ext html --input-dir . --output-dir .
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
