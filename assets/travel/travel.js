@@ -14,6 +14,7 @@
       const ctx = canvas.getContext("2d");
       const markerDetails = {
         "Singapore": { image: "../assets/travel/singapore.webp" },
+        "Seoraksan": { image: "../assets/travel/seoraksan.webp" },
         "Monaco": { image: "../assets/travel/monaco.webp" },
         "Rome": { image: "../assets/travel/rome.webp" },
         "Carcassonne": { image: "../assets/travel/carcassone.webp" },
@@ -63,6 +64,7 @@
         { name: "Strasbourg", coords: [7.7521, 48.5734], kind: "visited" },
         { name: "Bali", coords: [115.2126, -8.6705], kind: "visited" },
         { name: "Kuala Lumpur", coords: [101.6869, 3.1390], kind: "visited" },
+        { name: "Seoraksan", coords: [128.4890, 38.1714], kind: "visited" },
         { name: "Los Angeles", coords: [-118.2437, 34.0522], kind: "visited" },
         { name: "Las Vegas", coords: [-115.1398, 36.1699], kind: "visited" },
         { name: "Denver", coords: [-104.9903, 39.7392], kind: "visited" },
