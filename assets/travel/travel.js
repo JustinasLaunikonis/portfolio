@@ -15,10 +15,6 @@
       const markerDetails = {
         "Singapore": { image: "../assets/travel/singapore.webp" },
         "Seoraksan": { image: "../assets/travel/seoraksan.webp" },
-        "Seoul": {
-          image: "../assets/travel/seoul.webp",
-          caption: "forgot to take a photo here. Gyeongbokgung by Brady Bellini (CC0, Wikimedia Commons)."
-        },
         "Monaco": { image: "../assets/travel/monaco.webp" },
         "Rome": { image: "../assets/travel/rome.webp" },
         "Carcassonne": { image: "../assets/travel/carcassone.webp" },
