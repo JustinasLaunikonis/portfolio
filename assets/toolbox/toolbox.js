@@ -14,9 +14,10 @@
       const board = Array.from({ length: ROWS }, () => Array(COLS).fill(null));
 
       const categories = {
-        language: { color: "#9b5cff", label: "programming languages" },
+        language: { color: "#9b5cff", label: "languages / markup" },
         framework: { color: "#3db8ff", label: "frameworks / libraries" },
         platform: { color: "#39d98a", label: "infra / platform" },
+        ai: { color: "#ffb020", label: "ai / agents" },
         tool: { color: "#ff5d73", label: "tools / workflow" }
       };
 
@@ -31,35 +32,34 @@
       };
 
       const items = [
-        { name: "Python", shape: "T", category: "language", logo: "../assets/toolbox/python.svg" },
-        { name: "C++", shape: "L", category: "language", logo: "../assets/toolbox/cplusplus.svg" },
+        { name: "Java", shape: "L", category: "language", logo: "../assets/toolbox/openjdk.svg" },
         { name: "TypeScript", shape: "J", category: "language", logo: "../assets/toolbox/typescript.svg" },
-        { name: "JavaScript", shape: "S", category: "language", logo: "../assets/toolbox/javascript.svg" },
-        { name: "Lua", shape: "Z", category: "language", logo: "../assets/toolbox/lua.svg" },
+        { name: "Python", shape: "T", category: "language", logo: "../assets/toolbox/python.svg" },
         { name: "SQL", shape: "O", category: "language", logo: "../assets/toolbox/database.svg" },
-        { name: "HTML", shape: "I", category: "language", logo: "../assets/toolbox/html5.svg" },
-        { name: "CSS", shape: "T", category: "language", logo: "../assets/toolbox/css.svg" },
-        { name: "Django", shape: "S", category: "framework", logo: "../assets/toolbox/django.svg" },
-        { name: "Flask", shape: "Z", category: "framework", logo: "../assets/toolbox/flask.svg" },
-        { name: "Celery", shape: "J", category: "framework", logo: "../assets/toolbox/celery.svg" },
-        { name: "Next.js", shape: "I", category: "framework", logo: "../assets/toolbox/nextjs.svg" },
-        { name: "Tailwind", shape: "O", category: "framework", logo: "../assets/toolbox/tailwindcss.svg" },
-        { name: "Docker", shape: "I", category: "platform", logo: "../assets/toolbox/docker.svg" },
+        { name: "JavaScript", shape: "S", category: "language", logo: "../assets/toolbox/javascript.svg" },
+        { name: "HTML/CSS", shape: "Z", category: "language", logo: "../assets/toolbox/html5.svg" },
+        { name: "Paper", shape: "O", category: "framework", logo: "../assets/toolbox/papermc.svg" },
+        { name: "Next.js/React", shape: "I", category: "framework", logo: "../assets/toolbox/nextjs.svg" },
+        { name: "Prisma", shape: "T", category: "framework", logo: "../assets/toolbox/prisma.svg" },
+        { name: "FastAPI", shape: "S", category: "framework", logo: "../assets/toolbox/fastapi.svg" },
+        { name: "Tailwind", shape: "Z", category: "framework", logo: "../assets/toolbox/tailwindcss.svg" },
+        { name: "Vitest/Playwright", shape: "I", category: "framework", logo: "../assets/toolbox/vitest.svg" },
         { name: "Linux", shape: "O", category: "platform", logo: "../assets/toolbox/linux.svg" },
-        { name: "OpenAI", shape: "L", category: "platform", logo: "../assets/toolbox/openai.svg" },
-        { name: "Azure", shape: "J", category: "platform", logo: "../assets/toolbox/azure.svg" },
+        { name: "Docker", shape: "I", category: "platform", logo: "../assets/toolbox/docker.svg" },
+        { name: "Postgres", shape: "J", category: "platform", logo: "../assets/toolbox/postgresql.svg" },
+        { name: "GitHub Actions", shape: "L", category: "platform", logo: "../assets/toolbox/githubactions.svg" },
+        { name: "Tailscale", shape: "T", category: "platform", logo: "../assets/toolbox/tailscale.svg" },
         { name: "Node", shape: "S", category: "platform", logo: "../assets/toolbox/node.svg" },
+        { name: "Claude Code", shape: "T", category: "ai", logo: "../assets/toolbox/claude.svg" },
+        { name: "T3 Code", shape: "L", category: "ai", logo: "../assets/toolbox/t3code.png" },
+        { name: "OpenAI", shape: "J", category: "ai", logo: "../assets/toolbox/openai.svg" },
         { name: "Git", shape: "O", category: "tool", logo: "../assets/toolbox/git.svg" },
-        { name: "Vim", shape: "T", category: "tool", logo: "../assets/toolbox/vim.svg" },
-        { name: "VS Code", shape: "J", category: "tool", logo: "../assets/toolbox/vscode.svg" },
-        { name: "Cursor", shape: "S", category: "tool", logo: "../assets/toolbox/cursor.svg" },
-        { name: "Figma", shape: "J", category: "tool", logo: "../assets/toolbox/figma.svg" },
+        { name: "Maven", shape: "J", category: "tool", logo: "../assets/toolbox/maven.svg" },
+        { name: "VS Code", shape: "L", category: "tool", logo: "../assets/toolbox/vscode.svg" },
+        { name: "Figma", shape: "Z", category: "tool", logo: "../assets/toolbox/figma.svg" },
         { name: "Blender", shape: "O", category: "tool", logo: "../assets/toolbox/blender.svg" },
         { name: "DaVinci", shape: "S", category: "tool", logo: "../assets/toolbox/davinciresolve.svg" },
-        { name: "Tailscale", shape: "L", category: "platform", logo: "../assets/toolbox/tailscale.svg" },
-        { name: "Maven", shape: "J", category: "tool", logo: "../assets/toolbox/maven.svg" },
-        { name: "Vite", shape: "O", category: "tool", logo: "../assets/toolbox/vite.svg" },
-        { name: "LaTeX", shape: "Z", category: "tool", logo: "../assets/toolbox/latex.svg" }
+        { name: "Vite", shape: "T", category: "tool", logo: "../assets/toolbox/vite.svg" }
       ];
 
       function drawTextMark(text, x, y, size, fontSize = 9) {
