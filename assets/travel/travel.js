@@ -21,6 +21,10 @@
         "Cologne": { image: "../assets/travel/cologne.webp" },
         "Barcelona": { image: "../assets/travel/barcelona.webp" },
         "Edinburgh": { image: "../assets/travel/edinburgh1.webp" },
+        "Espoo": {
+          image: "../assets/travel/espoo.webp",
+          caption: "junction 2026 hackathon: 1st in the oxylabs challenge, 3rd in the hostinger one."
+        },
         "Tenerife": { image: "../assets/travel/tenerife.webp" },
         "Strasbourg": { image: "../assets/travel/strasbourg1.webp" },
         "Bali": { image: "../assets/travel/bali.webp" },
@@ -51,6 +55,7 @@
         { name: "Barcelona", coords: [2.1734, 41.3851], kind: "visited" },
         { name: "Malta", coords: [14.3754, 35.9375], kind: "visited" },
         { name: "Edinburgh", coords: [-3.1883, 55.9533], kind: "visited" },
+        { name: "Espoo", coords: [24.6559, 60.2055], kind: "visited" },
         { name: "Madeira", coords: [-16.9595, 32.7607], kind: "visited" },
         { name: "Tenerife", coords: [-16.5735, 28.2916], kind: "visited" },
         { name: "Porto", coords: [-8.6291, 41.1579], kind: "visited" },
