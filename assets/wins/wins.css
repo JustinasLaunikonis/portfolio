@@ -87,6 +87,18 @@
   transform: translateY(-12px);
 }
 
+.trophy.gold {
+  --metal: #e0b52a;
+  --metal-shadow: #9a7a12;
+  --metal-highlight: #fff0a8;
+}
+
+.trophy.bronze {
+  --metal: #b8733a;
+  --metal-shadow: #74431d;
+  --metal-highlight: #f0c49a;
+}
+
 .trophy.nvidia {
   --metal: #76b900;
   --metal-shadow: #4f7b00;
